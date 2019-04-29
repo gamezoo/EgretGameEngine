@@ -10,7 +10,7 @@
                 1) AllAsyncExecutor，并行执行一大堆函数
                 2) AnchorUtil，在Egret中已经没有anchorX、anchorY，可用此类实现同等功能
                 3) ArrayUtils，对Array的操作处理
-                4) AverageUtils，主要用于在不同帧存储不同数据，计算平均数，多用于基于时间差的功能的平滑性处理
+                4) AverageUtils，主要用于在不同帧存储不同数据，计算平均数，多用于基于时间差的功能的平滑性处理 
                 5) DateUtils，时间格式化工具类
                 6) DebugUtils，调试用工具类
                 7) DelayOptManager，分帧计算工具类
@@ -20,7 +20,7 @@
                11) FrameDelay，帧延迟处理
                12) FrameExecutor，分帧处理，自定义间隔帧数
                13) KeyboardUtils，键盘事件处理类
-               14) LocationProperty，浏览器地址栏参数处理类 
+               14) LocationProperty，浏览器地址栏参数处理类
                15) Log，封装console.log，便于正式上线时，关闭所有log输出
                16) MathUtils，数学计算工具类
                17) md5，md5加密类
