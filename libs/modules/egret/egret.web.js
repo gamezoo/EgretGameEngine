@@ -509,7 +509,7 @@ var egret;
                     this.audio.addEventListener("canplay", this.canPlay);
                     return;
                 }
-               // this.audio.play();
+                this.audio.play();
             };
             /**
              * @private

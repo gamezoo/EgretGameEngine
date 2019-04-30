@@ -366,7 +366,7 @@ export interface IField {
 
     /** Field id */
     id: number;
-
+    
     /** Field options */
     options?: { [k: string]: any };
 }

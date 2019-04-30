@@ -25,4 +25,6 @@ enum SceneConsts{
      * @type {number}
      */
     RpgGame,
+
+    Demo,
 }

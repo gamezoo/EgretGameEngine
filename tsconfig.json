@@ -1,6 +1,9 @@
 {
    "compilerOptions": {
+     "outDir": "bin-debug",
+         "experimentalDecorators": true,
    "lib": [
+     "es5",
       "es2017",
       "dom"
     ],
@@ -9,5 +12,10 @@
    },
    "exclude": [
       "node_modules"
-   ]
+   ],
+   "include": [
+        "src",
+        "libs",
+        "protobuf"
+    ]
 }

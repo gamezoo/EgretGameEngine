@@ -23,7 +23,7 @@ $root.simple = (function() {
          * @interface IPerson
          * @property {string} name Person name
          * @property {string} address Person address
-         * @property {string} phoneNumber Person phoneNumber
+         * @property {string} phone_number Person phone_number
          * @property {number} age Person age
          * @property {simple.ILocation|null} [location] Person location
          */
@@ -60,12 +60,12 @@ $root.simple = (function() {
         Person.prototype.address = "";
 
         /**
-         * Person phoneNumber.
-         * @member {string} phoneNumber
+         * Person phone_number.
+         * @member {string} phone_number
          * @memberof simple.Person
          * @instance
          */
-        Person.prototype.phoneNumber = "";
+        Person.prototype.phone_number = "";
 
         /**
          * Person age.
@@ -109,7 +109,7 @@ $root.simple = (function() {
                 writer = $Writer.create();
             writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
             writer.uint32(/* id 2, wireType 2 =*/18).string(message.address);
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.phoneNumber);
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.phone_number);
             writer.uint32(/* id 4, wireType 0 =*/32).int32(message.age);
             if (message.location != null && message.hasOwnProperty("location"))
                 $root.simple.Location.encode(message.location, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
@@ -154,7 +154,7 @@ $root.simple = (function() {
                     message.address = reader.string();
                     break;
                 case 3:
-                    message.phoneNumber = reader.string();
+                    message.phone_number = reader.string();
                     break;
                 case 4:
                     message.age = reader.int32();
@@ -171,8 +171,8 @@ $root.simple = (function() {
                 throw $util.ProtocolError("missing required 'name'", { instance: message });
             if (!message.hasOwnProperty("address"))
                 throw $util.ProtocolError("missing required 'address'", { instance: message });
-            if (!message.hasOwnProperty("phoneNumber"))
-                throw $util.ProtocolError("missing required 'phoneNumber'", { instance: message });
+            if (!message.hasOwnProperty("phone_number"))
+                throw $util.ProtocolError("missing required 'phone_number'", { instance: message });
             if (!message.hasOwnProperty("age"))
                 throw $util.ProtocolError("missing required 'age'", { instance: message });
             return message;
@@ -209,8 +209,8 @@ $root.simple = (function() {
                 return "name: string expected";
             if (!$util.isString(message.address))
                 return "address: string expected";
-            if (!$util.isString(message.phoneNumber))
-                return "phoneNumber: string expected";
+            if (!$util.isString(message.phone_number))
+                return "phone_number: string expected";
             if (!$util.isInteger(message.age))
                 return "age: integer expected";
             if (message.location != null && message.hasOwnProperty("location")) {
@@ -219,78 +219,6 @@ $root.simple = (function() {
                     return "location." + error;
             }
             return null;
-        };
-
-        /**
-         * Creates a Person message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof simple.Person
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {simple.Person} Person
-         */
-        Person.fromObject = function fromObject(object) {
-            if (object instanceof $root.simple.Person)
-                return object;
-            var message = new $root.simple.Person();
-            if (object.name != null)
-                message.name = String(object.name);
-            if (object.address != null)
-                message.address = String(object.address);
-            if (object.phoneNumber != null)
-                message.phoneNumber = String(object.phoneNumber);
-            if (object.age != null)
-                message.age = object.age | 0;
-            if (object.location != null) {
-                if (typeof object.location !== "object")
-                    throw TypeError(".simple.Person.location: object expected");
-                message.location = $root.simple.Location.fromObject(object.location);
-            }
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a Person message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof simple.Person
-         * @static
-         * @param {simple.Person} message Person
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        Person.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.name = "";
-                object.address = "";
-                object.phoneNumber = "";
-                object.age = 0;
-                object.location = null;
-            }
-            if (message.name != null && message.hasOwnProperty("name"))
-                object.name = message.name;
-            if (message.address != null && message.hasOwnProperty("address"))
-                object.address = message.address;
-            if (message.phoneNumber != null && message.hasOwnProperty("phoneNumber"))
-                object.phoneNumber = message.phoneNumber;
-            if (message.age != null && message.hasOwnProperty("age"))
-                object.age = message.age;
-            if (message.location != null && message.hasOwnProperty("location"))
-                object.location = $root.simple.Location.toObject(message.location, options);
-            return object;
-        };
-
-        /**
-         * Converts this Person to JSON.
-         * @function toJSON
-         * @memberof simple.Person
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        Person.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         return Person;
@@ -447,60 +375,6 @@ $root.simple = (function() {
             if (!$util.isString(message.country))
                 return "country: string expected";
             return null;
-        };
-
-        /**
-         * Creates a Location message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof simple.Location
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {simple.Location} Location
-         */
-        Location.fromObject = function fromObject(object) {
-            if (object instanceof $root.simple.Location)
-                return object;
-            var message = new $root.simple.Location();
-            if (object.region != null)
-                message.region = String(object.region);
-            if (object.country != null)
-                message.country = String(object.country);
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a Location message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof simple.Location
-         * @static
-         * @param {simple.Location} message Location
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        Location.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.region = "";
-                object.country = "";
-            }
-            if (message.region != null && message.hasOwnProperty("region"))
-                object.region = message.region;
-            if (message.country != null && message.hasOwnProperty("country"))
-                object.country = message.country;
-            return object;
-        };
-
-        /**
-         * Converts this Location to JSON.
-         * @function toJSON
-         * @memberof simple.Location
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        Location.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         return Location;
@@ -676,65 +550,6 @@ $root.simple = (function() {
             return null;
         };
 
-        /**
-         * Creates a user_login_c2s message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof simple.user_login_c2s
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {simple.user_login_c2s} user_login_c2s
-         */
-        user_login_c2s.fromObject = function fromObject(object) {
-            if (object instanceof $root.simple.user_login_c2s)
-                return object;
-            var message = new $root.simple.user_login_c2s();
-            if (object.accid != null)
-                message.accid = object.accid | 0;
-            if (object.tstamp != null)
-                message.tstamp = object.tstamp | 0;
-            if (object.ticket != null)
-                message.ticket = String(object.ticket);
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a user_login_c2s message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof simple.user_login_c2s
-         * @static
-         * @param {simple.user_login_c2s} message user_login_c2s
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        user_login_c2s.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.accid = 0;
-                object.tstamp = 0;
-                object.ticket = "";
-            }
-            if (message.accid != null && message.hasOwnProperty("accid"))
-                object.accid = message.accid;
-            if (message.tstamp != null && message.hasOwnProperty("tstamp"))
-                object.tstamp = message.tstamp;
-            if (message.ticket != null && message.hasOwnProperty("ticket"))
-                object.ticket = message.ticket;
-            return object;
-        };
-
-        /**
-         * Converts this user_login_c2s to JSON.
-         * @function toJSON
-         * @memberof simple.user_login_c2s
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        user_login_c2s.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
         return user_login_c2s;
     })();
 
@@ -874,54 +689,6 @@ $root.simple = (function() {
             return null;
         };
 
-        /**
-         * Creates a user_login_s2c message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof simple.user_login_s2c
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {simple.user_login_s2c} user_login_s2c
-         */
-        user_login_s2c.fromObject = function fromObject(object) {
-            if (object instanceof $root.simple.user_login_s2c)
-                return object;
-            var message = new $root.simple.user_login_s2c();
-            if (object.flag != null)
-                message.flag = object.flag | 0;
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a user_login_s2c message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof simple.user_login_s2c
-         * @static
-         * @param {simple.user_login_s2c} message user_login_s2c
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        user_login_s2c.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults)
-                object.flag = 0;
-            if (message.flag != null && message.hasOwnProperty("flag"))
-                object.flag = message.flag;
-            return object;
-        };
-
-        /**
-         * Converts this user_login_s2c to JSON.
-         * @function toJSON
-         * @memberof simple.user_login_s2c
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        user_login_s2c.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
         return user_login_s2c;
     })();
 
@@ -931,7 +698,7 @@ $root.simple = (function() {
          * Properties of a user_register_c2s.
          * @memberof simple
          * @interface Iuser_register_c2s
-         * @property {string} userName user_register_c2s userName
+         * @property {string} user_name user_register_c2s user_name
          */
 
         /**
@@ -950,12 +717,12 @@ $root.simple = (function() {
         }
 
         /**
-         * user_register_c2s userName.
-         * @member {string} userName
+         * user_register_c2s user_name.
+         * @member {string} user_name
          * @memberof simple.user_register_c2s
          * @instance
          */
-        user_register_c2s.prototype.userName = "";
+        user_register_c2s.prototype.user_name = "";
 
         /**
          * Creates a new user_register_c2s instance using the specified properties.
@@ -981,7 +748,7 @@ $root.simple = (function() {
         user_register_c2s.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.userName);
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.user_name);
             return writer;
         };
 
@@ -1017,15 +784,15 @@ $root.simple = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.userName = reader.string();
+                    message.user_name = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
                     break;
                 }
             }
-            if (!message.hasOwnProperty("userName"))
-                throw $util.ProtocolError("missing required 'userName'", { instance: message });
+            if (!message.hasOwnProperty("user_name"))
+                throw $util.ProtocolError("missing required 'user_name'", { instance: message });
             return message;
         };
 
@@ -1056,57 +823,9 @@ $root.simple = (function() {
         user_register_c2s.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (!$util.isString(message.userName))
-                return "userName: string expected";
+            if (!$util.isString(message.user_name))
+                return "user_name: string expected";
             return null;
-        };
-
-        /**
-         * Creates a user_register_c2s message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof simple.user_register_c2s
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {simple.user_register_c2s} user_register_c2s
-         */
-        user_register_c2s.fromObject = function fromObject(object) {
-            if (object instanceof $root.simple.user_register_c2s)
-                return object;
-            var message = new $root.simple.user_register_c2s();
-            if (object.userName != null)
-                message.userName = String(object.userName);
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a user_register_c2s message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof simple.user_register_c2s
-         * @static
-         * @param {simple.user_register_c2s} message user_register_c2s
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        user_register_c2s.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults)
-                object.userName = "";
-            if (message.userName != null && message.hasOwnProperty("userName"))
-                object.userName = message.userName;
-            return object;
-        };
-
-        /**
-         * Converts this user_register_c2s to JSON.
-         * @function toJSON
-         * @memberof simple.user_register_c2s
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        user_register_c2s.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         return user_register_c2s;
@@ -1246,54 +965,6 @@ $root.simple = (function() {
             if (!$util.isInteger(message.flag))
                 return "flag: integer expected";
             return null;
-        };
-
-        /**
-         * Creates a user_register_s2c message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof simple.user_register_s2c
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {simple.user_register_s2c} user_register_s2c
-         */
-        user_register_s2c.fromObject = function fromObject(object) {
-            if (object instanceof $root.simple.user_register_s2c)
-                return object;
-            var message = new $root.simple.user_register_s2c();
-            if (object.flag != null)
-                message.flag = object.flag | 0;
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a user_register_s2c message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof simple.user_register_s2c
-         * @static
-         * @param {simple.user_register_s2c} message user_register_s2c
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        user_register_s2c.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults)
-                object.flag = 0;
-            if (message.flag != null && message.hasOwnProperty("flag"))
-                object.flag = message.flag;
-            return object;
-        };
-
-        /**
-         * Converts this user_register_s2c to JSON.
-         * @function toJSON
-         * @memberof simple.user_register_s2c
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        user_register_s2c.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         return user_register_s2c;

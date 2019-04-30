@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DemoSkin" width="400" height="300" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="361" height="192" x="20.01" y="54" fillColor="0xebfff8" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image width="362" height="48" x="19" y="232" anchorOffsetX="0" anchorOffsetY="0" source="table_cloud_top" fillMode="repeat"/>
+    <e:Image width="362" height="41.99" x="380.89" y="61.99" anchorOffsetX="0" anchorOffsetY="0" source="table_cloud_top" fillMode="repeat" rotation="180.16"/>
+	<e:Button id="button" label="Button" x="162.5" y="126.5" anchorOffsetX="0" width="74" anchorOffsetY="0" height="75" skinName="MenuButtonSkin"/>
+</e:Skin>

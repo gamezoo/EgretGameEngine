@@ -46,6 +46,19 @@ Egret游戏开发使用框架，便于快速开发，以及各项目组间统一
 * [protobuf使用说明](https://github.com/WanderWang/protobuf-egret)
 
 
-联系我们
-===============
-QQ群: 656337595
+
+
+安装protobuf 环境
+
+npm install protobufjs@6.8.4 -g
+
+npm install @egret/protobuf -g
+
+
+cd egret-project
+# 将代码和项目结构拷贝至白鹭项目中
+pb-egret add
+# 将 protofile 文件放在 egret-project/protobuf/protofile 文件夹中
+pb-egret generate
+# 文件将会生成到 protobuf/bundles 文件夹中
+

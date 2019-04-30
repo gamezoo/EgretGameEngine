@@ -99,11 +99,12 @@ class Main extends egret.DisplayObjectContainer {
 
         //设置加载进度界面
         App.SceneManager.runScene(SceneConsts.LOADING);
-
+        
         //开启游戏
-        new RpgTest();
-        new ProtoBufTest();
+        //new RpgTest();
+        //new ProtoBufTest();
         // new EUITest();
+        //new DemoTest();
     }
 
     /**
@@ -112,8 +113,9 @@ class Main extends egret.DisplayObjectContainer {
     private initScene(): void {
         App.SceneManager.register(SceneConsts.LOADING, new LoadingScene());
         App.SceneManager.register(SceneConsts.UI, new UIScene());
-        App.SceneManager.register(SceneConsts.Game, new GameScene());
-        App.SceneManager.register(SceneConsts.RpgGame, new RpgGameScene());
+        //App.SceneManager.register(SceneConsts.Game, new GameScene());
+       // App.SceneManager.register(SceneConsts.RpgGame, new RpgGameScene());
+        App.SceneManager.register(SceneConsts.Demo,new DemoScene());
     }
 
     /**

@@ -12,8 +12,8 @@ declare namespace simple {
         /** Person address */
         address: string;
 
-        /** Person phoneNumber */
-        phoneNumber: string;
+        /** Person phone_number */
+        phone_number: string;
 
         /** Person age */
         age: number;
@@ -37,8 +37,8 @@ declare namespace simple {
         /** Person address. */
         public address: string;
 
-        /** Person phoneNumber. */
-        public phoneNumber: string;
+        /** Person phone_number. */
+        public phone_number: string;
 
         /** Person age. */
         public age: number;
@@ -94,27 +94,6 @@ declare namespace simple {
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a Person message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns Person
-         */
-        public static fromObject(object: { [k: string]: any }): simple.Person;
-
-        /**
-         * Creates a plain object from a Person message. Also converts values to other types if specified.
-         * @param message Person
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: simple.Person, options?: protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this Person to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
     }
 
     /** Properties of a Location. */
@@ -190,27 +169,6 @@ declare namespace simple {
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a Location message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns Location
-         */
-        public static fromObject(object: { [k: string]: any }): simple.Location;
-
-        /**
-         * Creates a plain object from a Location message. Also converts values to other types if specified.
-         * @param message Location
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: simple.Location, options?: protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this Location to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
     }
 
     /** Properties of a user_login_c2s. */
@@ -292,27 +250,6 @@ declare namespace simple {
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a user_login_c2s message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns user_login_c2s
-         */
-        public static fromObject(object: { [k: string]: any }): simple.user_login_c2s;
-
-        /**
-         * Creates a plain object from a user_login_c2s message. Also converts values to other types if specified.
-         * @param message user_login_c2s
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: simple.user_login_c2s, options?: protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this user_login_c2s to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
     }
 
     /** Properties of a user_login_s2c. */
@@ -382,34 +319,13 @@ declare namespace simple {
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a user_login_s2c message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns user_login_s2c
-         */
-        public static fromObject(object: { [k: string]: any }): simple.user_login_s2c;
-
-        /**
-         * Creates a plain object from a user_login_s2c message. Also converts values to other types if specified.
-         * @param message user_login_s2c
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: simple.user_login_s2c, options?: protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this user_login_s2c to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
     }
 
     /** Properties of a user_register_c2s. */
     interface Iuser_register_c2s {
 
-        /** user_register_c2s userName */
-        userName: string;
+        /** user_register_c2s user_name */
+        user_name: string;
     }
 
     /** Represents a user_register_c2s. */
@@ -421,8 +337,8 @@ declare namespace simple {
          */
         constructor(properties?: simple.Iuser_register_c2s);
 
-        /** user_register_c2s userName. */
-        public userName: string;
+        /** user_register_c2s user_name. */
+        public user_name: string;
 
         /**
          * Creates a new user_register_c2s instance using the specified properties.
@@ -472,27 +388,6 @@ declare namespace simple {
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a user_register_c2s message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns user_register_c2s
-         */
-        public static fromObject(object: { [k: string]: any }): simple.user_register_c2s;
-
-        /**
-         * Creates a plain object from a user_register_c2s message. Also converts values to other types if specified.
-         * @param message user_register_c2s
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: simple.user_register_c2s, options?: protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this user_register_c2s to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
     }
 
     /** Properties of a user_register_s2c. */
@@ -562,26 +457,5 @@ declare namespace simple {
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a user_register_s2c message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns user_register_s2c
-         */
-        public static fromObject(object: { [k: string]: any }): simple.user_register_s2c;
-
-        /**
-         * Creates a plain object from a user_register_s2c message. Also converts values to other types if specified.
-         * @param message user_register_s2c
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: simple.user_register_s2c, options?: protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this user_register_s2c to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
     }
 }

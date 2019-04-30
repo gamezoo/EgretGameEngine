@@ -12,8 +12,10 @@ enum ViewConst{
     Task,
     Daily,
     Mail,
+     RpgGame,
+    Demo,
 
     Game = 20000,
     GameUI,
-    RpgGame,
+   
 }

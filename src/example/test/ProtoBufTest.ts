@@ -26,7 +26,7 @@ class ProtoBufTest {
 
     private clientTest(): void {
         //创建一条消息
-        var msg = simple.user_login_c2s.fromObject({
+        var msg = simple.user_login_c2s.create({
             accid: 1,
             tstamp: 2,
             ticket: "yangsong"

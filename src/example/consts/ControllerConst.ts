@@ -13,4 +13,5 @@ enum ControllerConst{
     Mail,
     Game,
     RpgGame,
+    Demo
 }
