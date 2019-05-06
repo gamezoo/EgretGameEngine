@@ -26,11 +26,12 @@
  */
 
 class Main extends egret.DisplayObjectContainer {
+    
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
-
+    
     private onAddToStage(event: egret.Event) {
         this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
 
@@ -40,7 +41,7 @@ class Main extends egret.DisplayObjectContainer {
 
         //适配方式(全屏适配)
         App.StageUtils.startFullscreenAdaptation(650, 1000, this.onResize);
-
+        
         //初始化
         this.initLifecycle();
         this.initScene();
@@ -104,7 +105,7 @@ class Main extends egret.DisplayObjectContainer {
         //new RpgTest();
         //new ProtoBufTest();
         // new EUITest();
-        //new DemoTest();
+        new DemoTest();
     }
 
     /**

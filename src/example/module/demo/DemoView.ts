@@ -23,5 +23,5 @@ class DemoView extends BaseEuiView{
         App.ViewManager.open(ViewConst.Friend);
     }
     
- 
+    
 }
